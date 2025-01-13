@@ -33,3 +33,16 @@ express (npm i express)
 mongoose (npm i mongoose)
 cors (npm i cors)
 nodemon (npm i nodemon)
+
+
+
+## Milestone 3: Project Overview - 
+
+In this milestone we have learned how to setup basic backend configurations - 
+
+Key learnings -
+
+- Learned how to use express js.
+- Learned how to use the mongodb database and connect it with our server code.
+- Learned to use jsonWebTokens for authentications.
+- And finally learned to effectively handle the errors.
