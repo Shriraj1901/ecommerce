@@ -1,8 +1,14 @@
 const express = require('express')
 const connectDatabase = require('./db/Database')
-const ErrorHandler =require('./utlis/ErrorHandler')
+const ErrorHandler = require('./utils/ErrorHandler')
+const cookieParser = require('cookie-parser');
+const bodyParser= require('body-parser');
 const app=express()
 
+app.use(express.json());
+app.use(cookieParser());
+app.use("/",express.static("uploads"))
+app.use(bodyParser.urlencoded({extended:true,limit:'50mb'}))
 
 
 if(process.env.NODE_ENV !== "PRODUCTION"){
@@ -16,6 +22,10 @@ if(process.env.NODE_ENV !== "PRODUCTION"){
 
 
 //config
+const user=require('./controller/user')
+
+app.use("/app/v2/user",user)
+
 
 connectDatabase();
 app.use(ErrorHandler);
