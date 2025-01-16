@@ -26,6 +26,12 @@ In this milestone2 we learned how to setup a develpoment enviroment for a backen
 Setting up of the frontend with following commands and packages
 
 tailwind CSS
+
+Milestone 6: Project Overview -
+Key Learnings -
+
+We learned how to encrytp the password and store it in the database (Hashing) , Using the Bcrypt package.
+We also learned how to store data of new users inside the database.
 React (npm create vite@latest frontend)
 setting up of the backend with following commands and packages npm init || npm init -y
 
