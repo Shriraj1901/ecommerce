@@ -1,6 +1,6 @@
 # ecommerce
 
-Milestone 1
+## Milestone 1: Project Overview
 
 In this we have seen the demonstration of the MERN
 
@@ -16,7 +16,7 @@ Orders Page : Shows orders for each user
 payment gateway 
 
 
-Milestone 2: Project Overview - 
+## Milestone 2: Project Overview - 
 
 
 In this milestone2 we learned how to setup a develpoment enviroment for a backend project and also started with making bsic UI for login page .
@@ -48,7 +48,7 @@ Key learnings -
 - And finally learned to effectively handle the errors.
 
 
-Milestone 5: Project Overview -
+## Milestone 5: Project Overview -
 In this milestone we focused on creating a signup page for new users visiting the website,
 
 Key Learnings -
@@ -57,7 +57,7 @@ We Learned how to create the UI for the Signup page using React and Tailwind CSS
 We also learned how to use RegEx (Regular expressions) for the validation of the inputs on the signup page.
 
 
-Milestone 6: Project Overview -
+## Milestone 6: Project Overview -
 Key Learnings -
 
 We learned how to encrytp the password and store it in the database (Hashing) , Using the Bcrypt package.
