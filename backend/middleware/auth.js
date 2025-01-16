@@ -1,4 +1,4 @@
-const ErrorHandlerv=require('../utils/ErrorHandler')
+const ErrorHandler=require('../utils/ErrorHandler')
 
 const captureStackTrace=require('./catchAsyncErrors')
 
