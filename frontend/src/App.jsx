@@ -1,18 +1,18 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import {LoginPage,SignupPage} from './Routes.jsx'
 
-import { LoginPage } from './Routes';
+import './App.css';
 
-import './App.css'
-
-function App(){
+function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path ="/login" element={<LoginPage/>}/>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage/>} />
     </Routes>
     </BrowserRouter>
-
-    
-  )
+ 
+  );
 }
+
 export default App;
