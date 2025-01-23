@@ -3,8 +3,8 @@ import {React, useState} from 'react';
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
 import {RxAvatar} from 'react-icons/rx';
-// import axios from "axios";
-// import ValidationFormObject from "../../validation";
+import axios from "axios";
+import ValidationFormObject from "../../../validation";
 
 const Signup = () => {
     const [email, setEmail] = useState("");
@@ -38,21 +38,35 @@ const Signup = () => {
         return Object.keys(newErrors).length === 0;
     }
 
-    const handelSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        
-        if(!validateFields()){
-            return;
+    
+        if (!validateFields()) {
+          return; // Stop submission if validation fails
         }
-    }
+    
+        const newForm = new FormData();
+        newForm.append("file", avatar);
+        newForm.append("name", name);
+        newForm.append("email", email);
+        newForm.append("password", password);
+    
+        const config = {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            "Accept": "any",
+          },
+        };
+    
+    
+    //axios request
+        axios.post("http://localhost:8000/api/v2/user/create-user", newForm, config).then((res)=>{
+          console.log(res.data);
+        }).catch((err)=>{
+          console.log(err);
+        })
+    };
 
-    const newForm = new FormData();
-    newForm.append("file",avatar);
-    newForm.append("name",name);
-    newForm.append("email",email);
-    newForm.append("password",password);
-
-    // axios request
     
     return(
         <div className='min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:ph-6 lg-px-8'>
@@ -61,7 +75,7 @@ const Signup = () => {
             </div>
             <div className='mt-8 sm:mx-auto sm:w-full sm:max-w-md'>
                 <div className='bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10'>
-                    <form className='space-y-6' onSubmit={handelSubmit}>
+                    <form className='space-y-6' onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor='name' className='block text-sm font-medium text-gray-700'>
                                 Full Name
