@@ -1,35 +1,106 @@
-# ecommerce
+``````# E-Commerce Website
 
-Milestone 1
+## *Milestone 1: Project Overview*
 
-In this we have seen the demonstration of the MERN
+In this milestone, we demonstrated the working of the MERN stack and outlined the plan to build an e-commerce website using:
 
+- *M - MongoDB:* Database management
+- *E - Express.js:* Server-side framework
+- *R - React.js:* Frontend library
+- *N - Node.js:* Server-side runtime environment
 
-M-MongoDb
-E-Express JS[used as an API between client and server ]
-R-React[ this will be our client in case of the application]
-N-Node js we use for the running of express 
+### *Project Features:*
 
-Authentication : login logout signup
-Product page : All the products 
-Orders Page : Shows orders for each user 
-payment gateway 
+#### *1. Authentication*
+- Login and Signup functionality
+- User validation and session management
 
+#### *2. Product Page*
+- Displays available products
+- Product detail viewing
 
-Milestone 2: Project Overview - 
+#### *3. Orders Page*
+- Lists user orders
+- Displays order history and details
 
+#### *4. Payment Gateway*
+- Secure payment integration
+- Seamless transaction handling
 
-In this milestone2 we learned how to setup a develpoment enviroment for a backend project and also started with making bsic UI for login page .
+---
 
+## *Milestone 2: Development Environment Setup & UI*
 
+Key Learnings:
+- Tailwind CSS for Login page UI
+- Setup of backend tools:
+  - Express
+  - Mongoose
+  - dotenv
+  - Nodemon
+  - Cookie-parser
+  - Nodemailer
+- Basic React routing
 
-Setting up of the frontend with following commands and packages
+---
 
-tailwind CSS
-React (npm create vite@latest frontend)
-setting up of the backend with following commands and packages npm init || npm init -y
+## *Milestone 3: Backend Configuration*
 
-express (npm i express)
-mongoose (npm i mongoose)
-cors (npm i cors)
-nodemon (npm i nodemon)
+Key Learnings:
+- Usage of Express.js for server handling
+- Connecting MongoDB with server code
+- Authentication with JSON Web Tokens (JWT)
+- Effective error handling
+
+---
+
+## *Milestone 4: Database and Security Enhancements*
+
+Key Learnings:
+- Mongoose schema creation
+- File upload with Multer
+- Password hashing using Bcrypt
+- Enhanced JWT-based authentication
+
+---
+
+## *Milestone 5: Signup Page Development*
+
+Key Learnings:
+- UI creation for Signup page using React and Tailwind CSS
+- Input validation using Regular Expressions (RegEx)
+
+---
+
+## *Milestone 6: Password Encryption & Data Storage*
+
+Key Learnings:
+- Password encryption using Bcrypt
+- Storing user data securely in MongoDB
+
+---
+
+## *Milestone 7: Login & Signup Logic Implementation*
+
+Key Learnings:
+- User authentication logic: Login only for existing users
+
+---
+
+## *Milestone 8: Homepage Frontend Development*
+
+Key Learnings:
+- UI creation for the HomePage using React
+- Implementing frontend routing
+
+---
+
+## *Milestone 9: Product Form Creation*
+
+Key Learnings:
+- Form creation for adding products using React and Tailwind CSS
+- Key form features include:
+  - Product Name
+  - Description
+  - Price
+  - File upload for product images```
