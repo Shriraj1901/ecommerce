@@ -13,6 +13,7 @@ function App() {
       <Route path="/create-product" element={<CreateProduct/>}/>
     </Routes>
     </BrowserRouter>
+  );
  
 
 }
