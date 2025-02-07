@@ -4,6 +4,7 @@ const Product = require('../model/product'); //add this line
 const User = require('../model/User');
 const router = express.Router();
 const { pupload } = require("../multer");
+const path=require('path')
 
 const validateProductData = (data) => {
     const errors = [];
@@ -21,7 +22,9 @@ const validateProductData = (data) => {
 router.post('/create-product', pupload.array('images', 10), async (req, res) => {
     console.log("Hello")
     const { name, description, category, tags, price, stock, email } = req.body;
-    const images = req.files.map((file) => file.path); // Get file paths-this to be added
+    const images = req.files.map((file) => {
+        return `/products/${path.basename(file.path)}`;
+    });
 
     const validationErrors = validateProductData({ name, description, category, price, stock, email ,tags});//Add tags
     if (validationErrors.length > 0) {
@@ -60,5 +63,26 @@ router.post('/create-product', pupload.array('images', 10), async (req, res) => 
         res.status(500).json({ error: 'Server error. Could not create product.' });
     }
 });
+
+// Route: Get all products
+router.get('/get-products', async (req, res) => {
+    try {
+        const products = await Product.find();
+        const productsWithFullImageUrl = products.map(product => {
+            if (product.images && product.images.length > 0) {
+                product.images = product.images.map(imagePath => {
+                    // Image URLs are already prefixed with /products
+                    return imagePath;
+                });
+            }
+            return product;
+        });
+        res.status(200).json({ products: productsWithFullImageUrl });
+    } catch (err) {
+        console.error(' Server error:', err);
+        res.status(500).json({ error: 'Server error. Could not fetch products.' });
+    }
+});
+
 
 module.exports = router;

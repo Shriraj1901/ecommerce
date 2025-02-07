@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {React, useState,useEffect} from 'react';
+import {React,useState,useEffect} from 'react';
 
 const Product = ({ name, images, description, price }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
