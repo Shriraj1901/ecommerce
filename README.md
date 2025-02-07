@@ -181,4 +181,29 @@ Key learnings -
 - Checked the validations.
 - Created the new products using form (frontend) which was covered in milestone9.
 
+Milestone 11: Project Overview -
+In this milestone we learned the following things -
+
+Key learnings -
+
+We have created an endpoint that will send data from extract and send data from mongodb.
+We have also receive data at frontend and display that data dynamically using product card created earlier.
+
+
+Milestone 12: Project Overview -
+In this milestone we learned the following things -
+
+Key learnings -
+
+We have created an an endpoint that will send data by filtering with mail's and send data from mongodb.
+We have also learned how to display that data dynamically using product card created earlier.
+
+
+Milestone 13: Project Overview -
+In this milestone we learned the following things -
+
+Key learnings -
+
+We have created an an endpoint that will update the existing data in MongoDB.
+We have also implemented the logic of auto filling the form with previous data and give option to edit.
 
