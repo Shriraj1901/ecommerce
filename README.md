@@ -1,7 +1,4 @@
 
-# E--commerce-website
-
-****
 ## Milestone 1: Project Overview-
 
 In this milestone, we demonstrated the working of MERN Stack. And by using the MERN stack we are going to bulid an e-commerce website
@@ -37,6 +34,43 @@ Which is,
 ****
 
 ## Milestone 2: Project Overview - 
+
+=======
+# E--commerce-website
+
+****
+## Milestone 1: Project Overview-
+
+In this milestone, we demonstrated the working of MERN Stack. And by using the MERN stack we are going to bulid an e-commerce website
+
+Which is,
+
+*M - MongoDB* - Used to handle databases
+
+*E - Express.js* -  Used to easily handle severs
+
+*R - React.js* - Used for frontedend
+
+*N - Node.js* - Used with express.js for server handling
+
+### **Project Features :- **
+
+#### *Pages*
+1. *Authentication*
+   - Login / Signup functionality.
+   - User validation and session management.
+
+2. *Product Page*
+   - Displays all available products.
+   - Allows users to view product details.
+
+3. *Orders Page*
+   - Lists all orders made by the user.
+   - Displays order history and details.
+
+4. *Payment Gateway*
+   - Integrates a secure payment system.
+   - Handles transactions seamlessly.
 
 In this milestone we learned how to setup a development enviroment for a backend project and also started with making Basic UI for Login page.-
 
@@ -123,8 +157,6 @@ Key learnings -
 - We learned and created reusable card component with props for product details (e.g., name, image, price).
 - We have also setup a grid layout or flexbox for displaying multiple cards neatly.
 
-****
-
 ## Milestone 9: Project Overview -
 
 In this milestone we learned the following things -
@@ -133,9 +165,6 @@ Key learnings -
 
 - We Create the form for products.
 - We have also made this form functional such that this form will take multiple product images as input.
-
-****
-
 
 ## Milestone 10: Project Overview -
 
@@ -147,5 +176,3 @@ Key learnings -
 - Checked the validations.
 - Created the new products using form (frontend) which was covered in milestone9.
 
-
-****
