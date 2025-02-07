@@ -1,7 +1,12 @@
 import React,{useState,useEffect} from 'react'
 import {AiOutlinePlusCircle} from 'react-icons/ai'
 import axios from 'axios';
+import { useParams,useNavigate } from 'react-router-dom';
+
 const CreateProduct=()=>{
+    const {id}=useParams();
+    const navigate=useNavigate();
+    const isEdit=Boolean(id);
     const[images,setImages]=useState([]);
     const[name,setName]=useState("");
     const[description,setDescription]=useState("");
@@ -27,10 +32,25 @@ const CreateProduct=()=>{
     }
     
     useEffect(()=>{
-        return()=>{
-            previewImages.forEach((url)=>URL.revokeObjectURL(url))
+        if(isEdit){
+            axios.get(`http://localhost:8000/api/v2/product/product/${id}`).then((response)=>{
+                const p=response.data.product;
+                setName(p.name);
+                setDescription(p.description);
+                setCategory(p.category);
+                setTags(p.tags||" ");
+                setPrice(p.price);
+                setStock(p.stock);
+                setEmail(p.email);
+                if(p.images && p.images.length>0){
+                    setPreviewImages(p.images.map((imgPath)=>
+                    `http://localhost:8000${imgPath}`))
+                }
+            }).catch((err)=>{
+                console.error(`Error Fetching Product ${err}`)
+            })
         }
-    },[previewImages]) //To avoid storage issues
+    },[id,isEdit]) //To avoid storage issues
 
 
     const handleSubmit = async (e) => {
@@ -51,14 +71,27 @@ const CreateProduct=()=>{
         });
       
         try {
-            const response = await axios.post("http://localhost:8000/api/v2/product/create-product", formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
-      
-            if (response.status === 201) {
-                alert("Product created successfully!");
+            if(isEdit){
+                const response= await axios.put(`http://localhost:8000/api/v2/product/update-product/${id}`,formData,{
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    }
+                });
+                if(response.status===200){
+                    alert("Details Updated!")
+                    navigate('/my-products',{replace:true})
+                }
+            }
+            else{
+
+                const response = await axios.post("http://localhost:8000/api/v2/product/create-product", formData, {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    },
+                });
+                
+                if (response.status === 201) {
+                    alert("Product created successfully!");
                 setImages([]);
                 setName("");
                 setDescription("");
@@ -68,6 +101,7 @@ const CreateProduct=()=>{
                 setStock("");
                 setEmail("");
             }
+        }
         } catch (err) {
             console.error("Error creating product:", err);
             alert("Failed to create product. Please check the data and try again.");
@@ -162,7 +196,7 @@ const CreateProduct=()=>{
                         <label className='pb-1 block text-gray-600 font-medium'>
                             Upload Images <span className='text-red-500'>*</span>
                         </label>
-                        <input type='file' id='upload' className='hidden' multiple onChange={handleImageChange} required/>
+                        <input type='file' id='upload' className='hidden' multiple onChange={handleImageChange} required={!isEdit}/>
                         <label htmlFor='upload' className='cursor-pointer flex items-center justify-center w-[100px] h-[100px] bg-gray-700 rounded-md hover:bg-gray-300 transition-colors duration-200'>
                             <AiOutlinePlusCircle size={30} color='#555555'/>
                         </label>
