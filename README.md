@@ -1,151 +1,193 @@
+🚀 MERN Stack E-Commerce Project
+📌 Milestone 1: MERN Stack Demonstration
 
-# E--commerce-website
+In this milestone, we explored the fundamentals and functionality of the MERN stack:
 
-****
-## Milestone 1: Project Overview-
+M - MongoDB: Serves as the database for storing application data.
 
-In this milestone, we demonstrated the working of MERN Stack. And by using the MERN stack we are going to bulid an e-commerce website
+E - Express.js: Acts as the API layer, facilitating communication between the client and server.
 
-Which is,
+R - React.js: Powers the client-side application with a dynamic user interface.
 
-**M - MongoDB** - Used to handle databases
+N - Node.js: Provides the runtime environment to run Express on the server.
 
-**E - Express.js** -  Used to easily handle severs
+🔑 Key Features Implemented
 
-**R - React.js** - Used for frontedend
+Authentication
 
-**N - Node.js** - Used with express.js for server handling
+Login: Allows users to sign in to their accounts.
+Logout: Enables users to securely log out.
+Signup: Provides a registration interface for new users.
+Product Page
 
-### **Project Features :- **
+Displays all available products with detailed information.
+Orders Page
 
-#### **Pages**
-1. **Authentication**
-   - Login / Signup functionality.
-   - User validation and session management.
+Showcases the orders placed by each user.
+Payment Gateway
 
-2. **Product Page**
-   - Displays all available products.
-   - Allows users to view product details.
+Integrated a secure payment system for processing transactions.
+📚 Milestone 2: Project Overview
 
-3. **Orders Page**
-   - Lists all orders made by the user.
-   - Displays order history and details.
+This milestone focused on setting up the development environment for the backend project and designing the basic UI for the login page.
 
-4. **Payment Gateway**
-   - Integrates a secure payment system.
-   - Handles transactions seamlessly.
-****
+💻 Frontend Setup
 
-## Milestone 2: Project Overview - 
+React Setup: Initialized using Vite for a faster development environment.
+Tailwind CSS Integration: Used for efficient and responsive styling.
+🤟 Backend Setup
 
-In this milestone we learned how to setup a development enviroment for a backend project and also started with making Basic UI for Login page.-
+Project Initialization: Configured with Express.js, Mongoose, CORS, and Nodemon for seamless backend development.
+🗒️ Project Structure
 
-Key Learnings - 
+project-root/ ├── backend/ │ ├── models/ │ ├── routes/ │ ├── controllers/ │ ├── server.js │ └── .env ├── frontend/ │ ├── src/ │ ├── public/ │ ├── package.json │ └── tailwind.config.js ├── package.json └── README.md
 
-- Learned tailwind css for login page UI
-- Learned to setup basic tools used in backend like -
-  -  express
-  -  mongoose
-  -  dotenv
-  -  nodemon
-  -  cookie-parser
-  -  nodemailer etc...
-- And learned Basic react Routing.
+▶️ How to Run the Project
 
-****
+Frontend: cd frontend → npm install → npm run dev
+Backend: cd backend → npm install → nodemon server.js
+📚 Milestone 3: Error Handling Integration
 
-## Milestone 3: Project Overview - 
+Focused on improving backend stability with:
 
-In this milestone we have learned how to setup basic backend configurations - 
+Global Error Handling Middleware for consistent error responses.
+Optimized Middleware Loading for smoother request handling.
+📚 Milestone 4: User Model, Controller, and File Uploads with Multer
 
-Key learnings -
+In this milestone, we focused on building the User Model, setting up controllers to manage user data, and enabling file uploads with Multer.
 
-- Learned how to use express js.
-- Learned how to use the mongodb database and connect it with our server code.
-- Learned to use jsonWebTokens for authentications.
-- And finally learned to effectively handle the errors.
+🤟 Backend Enhancements
 
-****
+User Model: Defined the structure for user data using Mongoose.
+User Controller: Created logic for user operations such as registration and retrieval.
+Multer Integration: Configured Multer for handling file uploads like profile pictures.
+📚 Milestone 5: Frontend Sign-Up Page and Form Validation
 
-## Milestone 4: Project Overview -
+In this milestone, we focused on building a responsive and user-friendly Sign-Up page and implementing form validation.
 
-In this milestone we learned the following things -
+📝 Key Implementations
 
-Key learnings - 
+Sign-Up Page: Developed a clean UI for user registration.
+Form Validation: Ensured user inputs like email and password are validated before submission.
+📚 Milestone 6: Backend Signup Endpoint and Password Encryption
 
-- We learned how to use mongoose schema
-- We learned how to install and use multer
-- We learned password hashing using bcrypt
-- And lastly we learned about usage of jsonWebTokens for authentication.
+In this milestone, we created a secure backend endpoint for user signup, focusing on encrypting passwords and storing user data safely in the database.
 
-****
+🔒 Backend Enhancements
 
-## Milestone 5: Project Overview -
+Password Encryption:
 
-In this milestone we learned the following things -
+Used bcrypt to hash user passwords before saving them.
+Stored the hashed password instead of plain text for better security.
+Secure Data Storage:
 
-Key learnings - 
+Collected and stored complete user data (name, email, etc.) in the database with encrypted passwords.
+📝 Key Implementations
 
-- We have created Signup page.
-- We have also implemented multer features.
+Enhanced Security: Protected user data against breaches and complied with security standards.
+Improved Privacy: Prevented password visibility and unauthorized access.
+📚 Milestone 7: Login Endpoint and JWT Authentication
 
-****
+In this milestone, we implemented a secure login mechanism with JSON Web Tokens (JWT) for authentication and session management.
 
-## Milestone 6: Project Overview -
+🔐 Authentication Enhancements
 
-In this milestone we learned the following things -
+Login Endpoint: Created a backend route for user login verification.
+JWT Token Generation: Implemented token-based authentication for secure user sessions.
+Token Validation Middleware: Added middleware to protect routes requiring authentication.
+🌟 Key Features
 
-Key learnings - 
+Secure Login Process: Validate user credentials against stored encrypted passwords.
+Token-Based Authentication: Generate and manage JWT tokens for persistent user sessions.
+Route Protection: Ensure only authenticated users can access protected routes.
+📚 Milestone 8: Home Page Development and Product Display
 
-- We learned to hashe the password.
-- We also learned how to store the user credentials.
-- We also implemented the logic of if the user exists, if user not exists then we have created the user.
+In this milestone, we focused on creating a dynamic home page and implementing product display functionality.
 
-****
+🏠 Home Page Features
 
-## Milestone 7: Project Overview -
+Responsive Design: Created a user-friendly, responsive home page layout.
+Product Showcase: Implemented a grid-based display of available products.
+Product Cards: Designed individual product cards with key information.
+🔍 Product Display Enhancements
 
-In this milestone we learned the following things -
+Product Fetching: Integrated backend API to retrieve product data.
+Dynamic Rendering: Dynamically display products from the database.
+Basic Filtering: Added initial product filtering capabilities.
+📚 Milestone 9: Create Product Page and Form Enhancements
 
-Key learnings - 
+In this milestone, we focused on developing the Create Product Page, ensuring a user-friendly interface for adding new products.
 
-- We learned and created Login Endpoint.
-- We have also created password and email validation.
+📚 Key Features Implemented
 
-****
+Product Form: Developed a structured form for adding new products.
+Category Selection: Dropdown for selecting product categories.
+File Uploads: Image upload feature using Multer.
+Real-time Input Validation: Ensured correct data input before submission.
+🌟 Enhancements
 
-## Milestone 8: Project Overview -
+Improved form design and layout.
+Added validation for price and stock fields.
+Fixed UI margins for better responsiveness.
+📚 Milestone 10: Create Product Endpoint and Multer Integration
 
-In this milestone we learned the following things -
+In this milestone, we focused on implementing the backend logic for adding new products, including integrating Multer for handling image uploads.
 
-Key learnings - 
+🔧 Backend Enhancements
 
-- We learned and created reusable card component with props for product details (e.g., name, image, price).
-- We have also setup a grid layout or flexbox for displaying multiple cards neatly.
+Product Endpoint: Created an endpoint for adding new products to the database.
+Multer Integration: Set up Multer to handle file uploads for product images.
+File Storage: Configured Multer to store images under the uploads directory.
+🌟 Key Features Implemented
 
-****
+Product Addition: Enabled functionality for adding new products with relevant details such as name, description, price, and stock.
+Image Upload: Allowed product images to be uploaded and stored securely.
+Image Path Handling: Ensured correct file paths for images after upload.
+📚 Milestone 11: Dynamic Product Addition
 
-## Milestone 9: Project Overview -
+In this milestone, we implemented dynamic product addition functionality to enhance the user experience.
 
-In this milestone we learned the following things -
+🌟 Key Features Implemented
 
-Key learnings - 
+Real-time Product Updates: Products are dynamically added to the display without page refresh.
+Interactive UI: Implemented smooth transitions for newly added products.
+Validation Feedback: Added instant feedback for successful product creation.
+📚 Milestone 12: User Email Integration
 
-- We Create the form for products.
-- We have also made this form functional such that this form will take multiple product images as input.
+In this milestone, we focused on user email functionality and authentication improvements.
 
-****
+🔑 Key Features Implemented
 
+User Email Fetching: Implemented functionality to retrieve user email information.
+Static Email Configuration: Added ability to set and maintain static user email for testing and development.
+Email Validation: Enhanced email handling and validation throughout the application.
+<<<<<<< HEAD 📍 File Storage Structure
 
-## Milestone 10: Project Overview -
+The product images will be stored under the uploads directory to ensure organization and easy retrieval.
+📚 Milestone 13: Product Edit Feature Implementation
 
-In this milestone we learned the following things -
+In this milestone, we focused on implementing the Edit Feature for the My Products Page, enabling users to modify existing product information.
 
-Key learnings - 
+🌟 Key Features Implemented
 
-- Created the Endpoint for product and used it.
-- Checked the validations.
-- Created the new products using form (frontend) which was covered in milestone9.
+Edit Form Development: Created a form with pre-filled product details for easy editing.
+Data Handling: Implemented logic to handle form submissions and updates.
+API Integration: Developed backend API endpoints for updating product information.
+Database Updates: Integrated functionality to modify product details in the database.
+📍 File Storage Structure
 
+📚 Milestone 14: Delete Product Button Implementation
 
-****
+In this milestone, we implemented the Delete Product functionality to allow users to remove products from their listings.
+
+🛠️ Key Features Implemented
+
+Delete Button UI: Added a delete button to each product card.
+API Endpoint: Created a backend route for handling product deletion requests.
+Database Integration: Ensured products are removed from the database upon deletion.
+Frontend Handling: Implemented confirmation prompts before deletion and real-time UI updates.
+🔍 Enhancements
+
+Improved UI responsiveness when deleting products.
+Implemented error handling for failed deletions.
+Optimized product reloading after deletion.
