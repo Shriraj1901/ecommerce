@@ -1,7 +1,5 @@
-const mongoose=require('mongoose')
-
-const schema=mongoose.Schema
-
+const mongoose = require('mongoose')
+const schema = mongoose.Schema
 const productSchema = new schema({
     name:{
         type:String,
@@ -9,7 +7,7 @@ const productSchema = new schema({
     },
     description:{
         type:String,
-        required:true
+        required: true
     },
     category:{
         type:String,
@@ -17,15 +15,15 @@ const productSchema = new schema({
     },
     tags:{
         type:[String],
-        default:[]
+        default:[],
     },
     price:{
         type:Number,
-        required:true,
+        required:true
     },
     stock:{
-        type:Number,
-        required:true,
+        type:String,
+        required:true
     },
     email:{
         type:String,
@@ -34,14 +32,29 @@ const productSchema = new schema({
     },
     images:{
         type:[String],
-        required:true
+        required: true,
     },
     createdAt:{
         type:Date,
-        default:Date.now
-    }
-}, {
+        default: Date.now(),
+    },
+    cart: [
+        {
+            productid: {
+                type: String,
+                required: [true, "Please provide the product ID"],
+                unique: true,
+            },
+            quantity: {
+                type: Number,
+                required: [true, "Please provide the quantity"],
+                min: [0, "Quantity cannot be negative"],
+            },
+        },
+    ],
+},{
     timestamps:true
-})
+}
+)
 
-module.exports=mongoose.model("Product",productSchema)
+module.exports = mongoose.model("Product",productSchema)
