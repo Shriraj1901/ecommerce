@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginPage ,SignupPage,Home ,CreateProduct,MyProducts, ProductDetails} from "./Routes";
 
 import "./App.css";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route path='/create-product/:id' element = {<CreateProduct/>}/>
         <Route path='/my-products' element = {<MyProducts/>}/>
         <Route path='/product/:id'element={<ProductDetails/>}/>
+        <Route path='/cart' element={<cart/>}/>
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
     </BrowserRouter>
   );
