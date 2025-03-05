@@ -4,5 +4,6 @@ import Home from "./pages/Home";
 import CreateProduct from "./pages/CreateProduct";
 import MyProducts from "./pages/myProduct";
 import ProductDetails  from "./pages/productDetails";
+import CreateAddress from "./pages/createAddress.jsx";
 
-export { LoginPage, SignupPage, Home, CreateProduct,MyProducts,ProductDetails };
+export { LoginPage, SignupPage, Home, CreateProduct,MyProducts,ProductDetails,CreateAddress};
