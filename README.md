@@ -201,3 +201,14 @@ Key learnings -
 
 - We have edited the user schema to store cart products .
 - We have also implemented an end point to receive the product details and store in database.
+- 
+
+## Milestone 21: Project Overview -
+
+In this milestone we learned the following things -
+
+Key learnings - 
+
+- We have create address form in frontend page.
+- We have also create an state that will store input address
+- We have also impmented the logic where we click on add address in profile it should navigate to this form page.
