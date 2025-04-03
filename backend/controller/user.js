@@ -3,11 +3,13 @@ const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcrypt"); 
 const User = require("../model/User");
+const jwt=require('jsonwebtoken')
+const sendMail=require('../utils/sendMail')
 const router = express.Router();
 const { upload } = require("../multer");
-const ErrorHandler=require('../utils/ErrorHandler')
+const ErrorHandler = require("../utils/ErrorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors"); // Import catchAsyncErrors
-require("dotenv").config()
+
 // create user
 router.post(
     "/create-user",
@@ -41,7 +43,7 @@ router.post(
         const user = await User.create({
             name,
             email,
-            password: hashedPassword,
+            password,
             avatar: {
                 public_id: req.file?.filename || "",
                 url: fileUrl,
@@ -52,38 +54,30 @@ router.post(
     })
 );
 
-
 router.post('/login',catchAsyncErrors(async(req,res,next)=>{
     console.log('Creating User...')
-    const {email,password} = req.body
-
+    const {email,password}=req.body
     if(!email || !password){
-        return next(new ErrorHandler("pls provide credentials!",400))
+        return next(new ErrorHandler("please provide credentials!",400))
     }
-
     const user = await User.findOne({email}).select("+password")
     if(!user){
-        return next(new ErrorHandler("Invalid Email or Password",401))
+        return next(new ErrorHandler("Invaild Email or Password",401))
     }
-
     const isPasswordMatched = await bcrypt.compare(password,user.password)
-
     console.log("At auth","Password:",password,"Hash:",user.password)
-
     if(!isPasswordMatched){
-        return next(new ErrorHaandler("Invlaid Email or Password",401))
+        return next(new ErrorHandler("Invaild Email or Password",401))
     }
-
     user.password = undefined;
-
     res.status(200).json({
-        success:true,
+        success: true,
         user
     })
 
 }))
 
-router.get("/profile", catchAsyncErrors(async (req, res, next) => {
+router.get('/profile', catchAsyncErrors(async (req, res, next) => {
     const { email } = req.query;
     if (!email) {
         return next(new ErrorHandler("Please provide an email", 400));
@@ -103,5 +97,33 @@ router.get("/profile", catchAsyncErrors(async (req, res, next) => {
         addresses: user.addresses,
     });
 }));
+
+router.post("/add-address", catchAsyncErrors(async (req, res, next) => {
+    const { country, city, address1, address2, zipCode, addressType, email } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    const newAddress = {
+        country,
+        city,
+        address1,
+        address2,
+        zipCode,
+        addressType,
+    };
+
+    user.addresses.push(newAddress);
+    await user.save();
+
+    res.status(201).json({
+        success: true,
+        addresses: user.addresses,
+    });
+}));
+
 
 module.exports = router;

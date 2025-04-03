@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/auth/nav";
 
+
 const CreateAddress = () => {
     const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ const CreateAddress = () => {
             address2,
             zipCode,
             addressType,
-            email: "priya@gmail.com"
+            email: "shriraj@gmail.com"
         };
 
         try {
@@ -32,7 +33,7 @@ const CreateAddress = () => {
                 {
                     headers: { "Content-Type": "application/json" },
                 }
-            );
+            );7
             if (response.status === 201) {
                 alert("Address added successfully!");
                 navigate("/profile");
