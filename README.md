@@ -247,3 +247,12 @@ We have added cancel order button.
 If the order is already canceled this button is not displayed
 We have created an endpoint that will receive the order-id
 We have get the order using this id and mark the status canceled and save
+
+
+Milestone 29: Project Overview -
+In this milestone we learned the following things -
+
+Key learnings -
+
+We have configured the PayPal Sandbox Integration for Online Payments
+We have also added an radio button to for the COD and Online Payments
