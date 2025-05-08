@@ -256,3 +256,12 @@ Key learnings -
 
 We have configured the PayPal Sandbox Integration for Online Payments
 We have also added an radio button to for the COD and Online Payments
+
+
+Milestone 31: Project Overview -
+In this milestone we learned the following things -
+
+Key learning -
+
+How to use redux for global state management
+Implement redux store to store all global states
