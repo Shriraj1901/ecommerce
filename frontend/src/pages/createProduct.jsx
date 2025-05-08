@@ -4,6 +4,8 @@ import axios from 'axios';
 import { useParams,useNavigate } from 'react-router-dom';
 import NavBar from '../components/auth/nav';
 
+
+
 const CreateProduct=()=>{
     const {id}=useParams();
     const navigate=useNavigate();

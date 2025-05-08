@@ -2,14 +2,17 @@ import CartProduct from '../components/auth/CartProduct';
 import Nav from '../components/auth/nav';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux'; // Import useSelector
 
 const Cart = () => {
 
     const [products, setProducts] = useState([]);
-    const email="shriraj@gmail.com"
-    const navigate = useNavigate()
 
+    const navigate = useNavigate();
+
+    const email = useSelector((state) => state.user.email);
     useEffect(() => {
+      if (!email) return alert("Error in Display!");
         fetch(`http://localhost:8000/api/v2/product/cartproducts?email=${email}`)
           .then((res) => {
             if (!res.ok) {
@@ -24,16 +27,13 @@ const Cart = () => {
           .catch((err) => {
             console.error(" Error fetching products:", err);
           });
-      }, []);
+      }, [email]);
     
       console.log("Products:", products);
 
-
-      const handlePlaceOrder=()=>{
-
-        navigate('/select-address')
-        
-        }
+      const handlePlaceOrder = () => {
+        navigate("/select-address")
+      }
 
     return (
         <div className='w-full h-screen'>
@@ -51,9 +51,7 @@ const Cart = () => {
                         }
                     </div>
                     <div className="w-full p-4 flex justify-end">
-            <button
-              onClick={handlePlaceOrder}
-              className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600"
+                          <button onClick={handlePlaceOrder} className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600"
             >
               Place Order
             </button>

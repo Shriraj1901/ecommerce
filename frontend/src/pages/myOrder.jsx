@@ -1,11 +1,14 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from '../components/auth/nav';
 import { FaBox, FaShippingFast, FaTimesCircle } from 'react-icons/fa';
+import { useSelector } from 'react-redux'; //import useSelector
+
 
 const MyOrdersPage = () => {
     const [orders, setOrders] = useState([]);
-    const defaultEmail = 'atharva@gmail.com';
+    const defaultEmail = useSelector((state) => state.user.email)
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
@@ -42,7 +45,8 @@ const MyOrdersPage = () => {
     useEffect(() => {
         fetchOrders();
     }, []);
-return (
+
+    return (
         <>
             <Nav />
             <div className='w-full min-h-screen bg-gradient-to-br from-indigo-200 to-cyan-200'>
@@ -79,7 +83,8 @@ return (
                                                 <p className="italic">{order.shippingAddress.addressType}</p>
                                             </div>
                                         </div>
-<div className="mb-4">
+
+                                        <div className="mb-4">
                                             <h2 className="text-xl font-semibold mb-2">Items</h2>
                                             <ul className="list-disc ml-8 space-y-1 text-gray-700">
                                                 {order.orderItems.map((item, index) => (

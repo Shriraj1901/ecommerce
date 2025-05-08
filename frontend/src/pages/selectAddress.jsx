@@ -1,7 +1,10 @@
+// SelectAddress.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from '../components/auth/nav'; // Ensure correct casing
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 const SelectAddress = () => {
     const [addresses, setAddresses] = useState([]);
@@ -10,7 +13,8 @@ const SelectAddress = () => {
     const navigate = useNavigate();
 
     // Replace with dynamic email in production
-    const userEmail = 'shriraj@gmail.com';
+        const userEmail = useSelector((state) => state.user.email);
+    
 
     useEffect(() => {
         const fetchAddresses = async () => {
@@ -92,9 +96,10 @@ return (
                                     className='border p-4 rounded-md flex justify-between items-center hover:shadow-md transition-shadow'
                                 >
                                     <div>
-                                        <p className='font-medium'>
-                                            {address.address1}{address.address2 ? `, ${address.address2}` : ''}, {address.city}, {address.state}, {address.zipCode}
-                                        </p>
+                                    <p className='font-medium'>
+                                        {address.address1}{address.address2 ? `, ${address.address2}` : ''}, {address.city}, {address.state}, {address.zipCode}
+                                    </p>
+
                                         <p className='text-sm text-gray-600'>{address.country}</p>
                                         <p className='text-sm text-gray-500'>Type: {address.addressType || 'N/A'}</p>
                                     </div>

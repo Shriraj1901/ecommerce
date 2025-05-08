@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { Loader, AlertCircle } from "lucide-react";
-import Nav from "../components/auth/nav";
+import Nav from '../components/auth/nav'
+
+import { useSelector } from 'react-redux';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -11,8 +13,8 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const email="shriraj@gmail.com"
-
+  const email = useSelector((state) => state.user.email);
+  
   useEffect(() => {
     const fetchProduct = async () => {
       try {
