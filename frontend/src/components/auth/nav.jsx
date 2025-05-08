@@ -13,7 +13,7 @@ const NavBar = () => {
     <nav className="bg-gradient-to-r from-blue-500 to-indigo-600 shadow-lg p-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-white text-2xl font-bold tracking-wide">Brand</h1>
+        <h1 className="text-white text-2xl font-bold tracking-wide">Kalvi-Eshop</h1>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
@@ -22,7 +22,7 @@ const NavBar = () => {
             { name: "My Products", path: "/my-products" },
             { name: "Add Products", path: "/create-product" },
             { name: "Cart", path: "/cart" },
-            { name: "Profile",path:"/profile"}
+            { name: "Profile", path: "/profile"}
           ].map((link) => (
             <NavLink
               key={link.path}
@@ -53,7 +53,8 @@ const NavBar = () => {
               { name: "My Products", path: "/my-products" },
               { name: "Add Products", path: "/create-product" },
               { name: "Cart", path: "/cart" },
-              { name:"Profile", path:"/profile"}
+              { name: "Profile", path: "/profile"},
+              { name: "My Orders", path: "/myorders" }
             ].map((link) => (
               <li key={link.path}>
                 <NavLink
